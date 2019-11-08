@@ -1,0 +1,2 @@
+defmodule StatWatch do
+end
