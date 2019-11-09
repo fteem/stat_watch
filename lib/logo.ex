@@ -1,8 +1,9 @@
 defmodule StatWatch.Logo do
   @api_url "https://logo.clearbit.com"
 
-  def fetch_logo do
-    logo_url()
+  def fetch_logo(domain_name) do
+    domain_name
+    |> logo_url
     |> HTTPoison.get!()
     |> extract_logo
   end
@@ -11,7 +12,7 @@ defmodule StatWatch.Logo do
   def extract_logo(%{status_code: 404}), do: "Not found"
   def extract_logo(_), do: "Something went wrong"
 
-  def logo_url do
-    "#{@api_url}/alchemist.camp"
+  def logo_url(domain_name) do
+    "#{@api_url}/#{domain_name}"
   end
 end

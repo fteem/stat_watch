@@ -1,6 +1,6 @@
 defmodule StatWatch.CSV do
   def column_names do
-    Enum.join(~w(DateTime Subscribers Videos Views LogoURL), ",")
+    Enum.join(~w(DateTime Subscribers Videos Views Followers LogoURL), ",")
   end
 
   def save_csv(row) do
